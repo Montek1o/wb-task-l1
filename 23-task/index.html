@@ -4,8 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0 0;
+    }
+
+    label {
+      margin-top: 3px;
+    }
+
+    form {
+      display: flex;
+      column-gap: 10px;
+    }
+
+    input {
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid #999;
+      padding: 5px;
+      width: 200px;
+    }
+
+    .password {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+    }
+
+    .suggestions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      color: red;
+    }
+
+    .suggestion {
+      display: flex;
+      column-gap: 8px;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid red;
+      border-radius: 50%;
+      width: 17px;
+      height: 17px;
+      font-weight: 700;
+      color: red;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <form>
+      <label for="password">Пароль:</label>
+      <div class="password">
+        <input type="password" id="password">
+        <span class="complexity"></span>
+        <div class="suggestions"></div>
+      </div>
+    </form>
+  </div>
   <script src="./23-task.js"></script>
 </body>
 </html>
