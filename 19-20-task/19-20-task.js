@@ -41,11 +41,26 @@ function fetchPosts(data) {
     cash.push(post);
   });
   // перевели элементы в json и добавили в Local storage
-  localStorage.setItem('posts', JSON.stringify(cash));
+  /* localStorage.setItem('posts', JSON.stringify(cash)); */
+  writeStorage();
   // подсчёт и вывод в консоль объём данных в хранилище
   calcDataLocalStorage();
   // загрузка завершена
   isLoading = false;
+}
+
+function writeStorage() {
+  // переводим элементы в json и добавляем в Local storage
+  try {
+    localStorage.setItem('posts', JSON.stringify(cash));
+  // если хранилище будет переполнено, удаляем первые пять постов, чтобы добавить новые
+  } catch {
+    for (let i = 0; i < 5; i++) {
+      cash.shift();
+    }
+    // после чего повторно вызываем функцию, чтобы сработал try
+    writeStorage();
+  }
 }
 
 // отрисовка поста

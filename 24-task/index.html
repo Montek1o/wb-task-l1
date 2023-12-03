@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .paggination {
+      padding: 5px 10px;
+    }
+
+    .paggination__header {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+
+    .page-number {
+      display: inline-block;
+      text-align: right;
+      width: 30.66px;
+    }
+
+    .paggination__arrows {
+      display: flex;
+      column-gap: 10px;
+    }
+
+    .arrows__arrow-left, .arrows__arrow-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 26px;
+      height: 26px;
+      color: rgb(255, 255, 255);
+      background-color: rgb(31, 228, 136);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .arrows__arrow-left:hover, .arrows__arrow-right:hover {
+      background-color: rgb(141, 222, 184);
+    }
+
+    .arrows__arrow-left:active, .arrows__arrow-right:active {
+      background-color: rgb(128, 199, 166);
+    }
+
+    .arrows__arrow-left:disabled, .arrows__arrow-right:disabled {
+      background-color: rgb(199, 199, 199);
+      cursor: default;
+    }
+
+    .table__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr 1.3fr 1.3fr 0.5fr 0.5fr;
+      padding: 5px 10px;
+      color: white;
+      background-color: rgb(31, 228, 136);
+    }
+
+    .header__item {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      height: 25px;
+      cursor: pointer;
+    }
+
+    .header__item span {
+      display: none;
+    }
+    
+    .table__item {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr 1.3fr 1.3fr 0.5fr 0.5fr;
+      column-gap: 8px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="paggination">
+      <div class="paggination__header">
+        <h2>Page: <span class="page-number">1</span> / 20</h2>
+        <div class="paggination__arrows">
+          <button class="arrows__arrow-left" disabled>&#10094;</button>
+          <button class="arrows__arrow-right">&#10095;</button>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <div class="table__header">
+        <p class="header__item" data-column-name="fname">First name <span>▼</span></p>
+        <p class="header__item" data-column-name="lname">Last name <span>▼</span></p>
+        <p class="header__item" data-column-name="tel">Telephone <span>▼</span></p>
+        <p class="header__item" data-column-name="address">Address <span>▼</span></p>
+        <p class="header__item" data-column-name="city">City <span>▼</span></p>
+        <p class="header__item" data-column-name="state">State <span>▼</span></p>
+        <p class="header__item" data-column-name="zip">Zip <span>▼</span></p>
+      </div>
+      <div class="table__body"></div>
+    </div>
+  </div>
+  <script src="./24-task.js"></script>
+</body>
+</html>
