@@ -40,8 +40,7 @@ function fetchPosts(data) {
     // добавили элементы в кеш
     cash.push(post);
   });
-  // перевели элементы в json и добавили в Local storage
-  /* localStorage.setItem('posts', JSON.stringify(cash)); */
+  // записываем данные в хранилище
   writeStorage();
   // подсчёт и вывод в консоль объём данных в хранилище
   calcDataLocalStorage();
